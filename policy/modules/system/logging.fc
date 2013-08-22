@@ -2,6 +2,7 @@
 
 /etc/rsyslog\.conf					--	gen_context(system_u:object_r:syslog_conf_t,s0)
 /etc/syslog\.conf					--	gen_context(system_u:object_r:syslog_conf_t,s0)
+/etc/syslog\.conf\.sysklogd	gen_context(system_u:object_r:syslog_conf_t,s0)
 /etc/rsyslog\.d(/.*)?					gen_context(system_u:object_r:syslog_conf_t,s0)
 /etc/audit(/.*)?						gen_context(system_u:object_r:auditd_etc_t,mls_systemhigh)
 /etc/systemd/journal.*\.conf		--	gen_context(system_u:object_r:syslog_conf_t,s0)
@@ -32,10 +33,12 @@
 /usr/sbin/auditctl	--	gen_context(system_u:object_r:auditctl_exec_t,s0)
 /usr/sbin/auditd	--	gen_context(system_u:object_r:auditd_exec_t,s0)
 /usr/sbin/klogd		--	gen_context(system_u:object_r:klogd_exec_t,s0)
+/usr/sbin/klogd\.sysklogd	--	gen_context(system_u:object_r:klogd_exec_t,s0)
 /usr/sbin/metalog	--	gen_context(system_u:object_r:syslogd_exec_t,s0)
 /usr/sbin/minilogd	--	gen_context(system_u:object_r:syslogd_exec_t,s0)
 /usr/sbin/rklogd	--	gen_context(system_u:object_r:klogd_exec_t,s0)
 /usr/sbin/rsyslogd	--	gen_context(system_u:object_r:syslogd_exec_t,s0)
+/usr/sbin/syslogd\.sysklogd	--	gen_context(system_u:object_r:syslogd_exec_t,s0)
 /usr/sbin/syslog-ng	--	gen_context(system_u:object_r:syslogd_exec_t,s0)
 /usr/sbin/syslogd	--	gen_context(system_u:object_r:syslogd_exec_t,s0)
 
