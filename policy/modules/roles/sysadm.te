@@ -939,6 +939,7 @@ optional_policy(`
 ')
 
 optional_policy(`
+	rpcbind_stream_connect(sysadm_t)
 	rpcbind_admin(sysadm_t, sysadm_r)
 ')
 
