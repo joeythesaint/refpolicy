@@ -60,6 +60,8 @@ ifdef(`distro_redhat',`
 /usr/sbin/dhcpcd		--	gen_context(system_u:object_r:dhcpc_exec_t,s0)
 /usr/sbin/ethtool		--	gen_context(system_u:object_r:ifconfig_exec_t,s0)
 /usr/sbin/ifconfig		--	gen_context(system_u:object_r:ifconfig_exec_t,s0)
+/usr/sbin/ifconfig\.net-tools	--	gen_context(system_u:object_r:ifconfig_exec_t,s0)
+/usr/sbin/ip\.iproute2		--	gen_context(system_u:object_r:ifconfig_exec_t,s0)
 /usr/sbin/ip			--	gen_context(system_u:object_r:ifconfig_exec_t,s0)
 /usr/sbin/ipx_configure		--	gen_context(system_u:object_r:ifconfig_exec_t,s0)
 /usr/sbin/ipx_interface		--	gen_context(system_u:object_r:ifconfig_exec_t,s0)
@@ -67,8 +69,16 @@ ifdef(`distro_redhat',`
 /usr/sbin/iw			--	gen_context(system_u:object_r:ifconfig_exec_t,s0)
 /usr/sbin/iwconfig		--	gen_context(system_u:object_r:ifconfig_exec_t,s0)
 /usr/sbin/mii-tool		--	gen_context(system_u:object_r:ifconfig_exec_t,s0)
+/usr/sbin/mii-tool\.net-tools	--	gen_context(system_u:object_r:ifconfig_exec_t,s0)
 /usr/sbin/pump			--	gen_context(system_u:object_r:dhcpc_exec_t,s0)
 /usr/sbin/tc			--	gen_context(system_u:object_r:ifconfig_exec_t,s0)
+
+#
+# /usr/lib/busybox
+#
+/usr/lib/busybox/bin/ifconfig	--	gen_context(system_u:object_r:ifconfig_exec_t,s0)
+/usr/lib/busybox/bin/ip		--	gen_context(system_u:object_r:ifconfig_exec_t,s0)
+/usr/lib/busybox/sbin/mii-tool	--	gen_context(system_u:object_r:ifconfig_exec_t,s0)
 
 #
 # /var
