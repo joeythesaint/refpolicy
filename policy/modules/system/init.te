@@ -1418,3 +1418,8 @@ optional_policy(`
 	userdom_dontaudit_rw_all_users_stream_sockets(systemprocess)
 	userdom_dontaudit_write_user_tmp_files(systemprocess)
 ')
+
+# systemd related allow rules
+allow kernel_t init_t:process dyntransition;
+allow devpts_t device_t:filesystem associate;
+allow init_t self:capability2 block_suspend;
