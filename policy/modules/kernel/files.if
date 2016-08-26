@@ -7076,3 +7076,22 @@ interface(`files_unconfined',`
 
 	typeattribute $1 files_unconfined_type;
 ')
+
+########################################
+## <summary>
+##	systemd tmp files access to kernel tmp files domain
+## </summary>
+## <param name="domain">
+##	<summary>
+##	Domain allowed access.
+##	</summary>
+## </param>
+#
+interface(`systemd_service_allow_kernel_files_domain_to_tmp_t',`
+	gen_require(`
+	type tmp_t;
+        class lnk_file getattr;
+	')
+
+	allow $1 tmp_t:lnk_file getattr;
+')
