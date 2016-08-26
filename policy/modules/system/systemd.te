@@ -995,7 +995,7 @@ allow systemd_tmpfiles_t systemd_tmpfiles_conf_type:file read_file_perms;
 
 allow systemd_tmpfiles_t init_t:dir search;
 allow systemd_tmpfiles_t proc_t:filesystem getattr;
-allow systemd_tmpfiles_t init_t:file read;
+allow systemd_tmpfiles_t init_t:file { open getattr read };
 allow systemd_tmpfiles_t initrc_t:unix_dgram_socket sendto;
 
 kernel_getattr_proc(systemd_tmpfiles_t)
