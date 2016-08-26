@@ -240,3 +240,9 @@ unconfined_domain_noaudit(unconfined_execmem_t)
 optional_policy(`
 	unconfined_dbus_chat(unconfined_execmem_t)
 ')
+
+
+# systemd: specified domain to start stop reset systemd service
+systemd_service_file_operations(unconfined_t)
+
+allow unconfined_t init_t:system reload;

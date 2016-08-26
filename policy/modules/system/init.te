@@ -1425,3 +1425,7 @@ optional_policy(`
 allow kernel_t init_t:process dyntransition;
 allow devpts_t device_t:filesystem associate;
 allow init_t self:capability2 block_suspend;
+allow init_t self:capability2 audit_read;
+
+allow initrc_t init_t:system { start status };
+allow initrc_t init_var_run_t:service { start status };
