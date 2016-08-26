@@ -628,3 +628,8 @@ allow auditd_t tmpfs_t:dir { open read search add_name write getattr search };
 allow auditd_t initrc_t:unix_dgram_socket sendto;
 
 allow klogd_t initrc_t:unix_dgram_socket sendto;
+
+allow syslogd_t self:shm create;
+allow syslogd_t self:sem { create read unix_write write };
+allow syslogd_t self:shm { read unix_read unix_write write };
+allow syslogd_t tmpfs_t:file { read write };
