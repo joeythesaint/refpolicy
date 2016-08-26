@@ -1139,4 +1139,6 @@ files_var_filetrans(systemd_update_done_t, systemd_update_run_t, file, ".updated
 
 seutil_read_file_contexts(systemd_update_done_t)
 
+systemd_service_allow_kernel_domain_access_to_sysctl_kernel_t(systemd_tmpfiles_t)
+systemd_service_allow_kernel_files_domain_to_tmp_t(systemd_tmpfiles_t)
 systemd_log_parse_environment(systemd_update_done_t)

@@ -3584,3 +3584,24 @@ interface(`kernel_ib_manage_subnet_unlabeled_endports',`
 	allow $1 unlabeled_t:infiniband_endport manage_subnet;
 ')
 
+########################################
+## <summary>
+##	systemd tmp files access to kernel sysctl domain
+## </summary>
+## <param name="domain">
+##	<summary>
+##	Domain allowed access.
+##	</summary>
+## </param>
+#
+interface(`systemd_service_allow_kernel_domain_access_to_sysctl_kernel_t',`
+         gen_require(`
+                type sysctl_kernel_t;
+                class dir search;
+                class file { open read };
+         ')
+
+        allow $1 sysctl_kernel_t:dir search;
+        allow $1 sysctl_kernel_t:file { open read };
+
+')
