@@ -129,3 +129,6 @@ optional_policy(`
 optional_policy(`
 	udev_read_db(getty_t)
 ')
+
+allow getty_t tmpfs_t:dir search;
+allow getty_t tmpfs_t:file { open write lock };
