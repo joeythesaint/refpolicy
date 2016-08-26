@@ -145,3 +145,6 @@ optional_policy(`
 optional_policy(`
 	unconfined_domain(ldconfig_t)
 ')
+
+# systemd: init domain to start lib domain service
+systemd_service_lib_function(lib_t)

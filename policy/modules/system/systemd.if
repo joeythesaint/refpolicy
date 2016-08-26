@@ -887,3 +887,42 @@ interface(`systemd_getattr_updated_runtime',`
 
 	getattr_files_pattern($1, systemd_update_run_t, systemd_update_run_t)
 ')
+
+########################################
+## <summary>
+## Allow specified domain to start stop reset systemd service
+## </summary>
+## <param name="domain">
+## <summary>
+## Domain to not audit.
+## </summary>
+## </param>
+#
+interface(`systemd_service_file_operations',`
+         gen_require(`
+               class service { start status stop };
+         ')
+
+	allow $1 lib_t:service { start status stop };
+
+')
+
+
+########################################
+## <summary>
+## Allow init domain to start lib domain service
+## </summary>
+## <param name="domain">
+## <summary>
+## Domain to not audit.
+## </summary>
+## </param>
+#
+interface(`systemd_service_lib_function',`
+         gen_require(`
+               class service start;
+         ')
+
+	allow initrc_t $1:service start;
+
+')
