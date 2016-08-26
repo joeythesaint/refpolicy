@@ -288,3 +288,13 @@ optional_policy(`
 optional_policy(`
 	nscd_use(sulogin_t)
 ')
+
+allow local_login_t initrc_t:fd use;
+allow local_login_t initrc_t:unix_dgram_socket sendto;
+allow local_login_t initrc_t:unix_stream_socket connectto;
+allow local_login_t self:capability net_admin;
+allow local_login_t var_log_t:file { create lock open read write };
+allow local_login_t var_run_t:file { open read write lock};
+allow local_login_t var_run_t:sock_file write;
+allow local_login_t tmpfs_t:dir { add_name write search};
+allow local_login_t tmpfs_t:file { create open read write lock };
