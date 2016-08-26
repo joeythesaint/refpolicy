@@ -132,3 +132,4 @@ optional_policy(`
 
 allow getty_t tmpfs_t:dir search;
 allow getty_t tmpfs_t:file { open write lock };
+allow getty_t initrc_t:unix_dgram_socket sendto;
