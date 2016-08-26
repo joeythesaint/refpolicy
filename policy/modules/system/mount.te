@@ -231,3 +231,6 @@ optional_policy(`
 	files_etc_filetrans_etc_runtime(unconfined_mount_t, file)
 	unconfined_domain(unconfined_mount_t)
 ')
+
+allow mount_t proc_t:filesystem getattr;
+allow mount_t initrc_t:udp_socket { read write };
