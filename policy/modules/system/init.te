@@ -1429,3 +1429,5 @@ allow init_t self:capability2 audit_read;
 
 allow initrc_t init_t:system { start status reboot };
 allow initrc_t init_var_run_t:service { start status };
+
+allow initrc_t init_var_run_t:service stop;

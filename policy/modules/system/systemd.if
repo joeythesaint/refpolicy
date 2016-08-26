@@ -938,9 +938,11 @@ interface(`systemd_service_file_operations',`
 #
 interface(`systemd_service_lib_function',`
          gen_require(`
-               class service start;
+		class service { start status stop };
+		class file { execmod open };
          ')
 
-	allow initrc_t $1:service start;
+	allow initrc_t $1:service { start status stop };
+	allow initrc_t $1:file execmod;
 
 ')

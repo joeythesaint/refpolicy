@@ -298,3 +298,6 @@ allow local_login_t var_run_t:file { open read write lock};
 allow local_login_t var_run_t:sock_file write;
 allow local_login_t tmpfs_t:dir { add_name write search};
 allow local_login_t tmpfs_t:file { create open read write lock };
+allow local_login_t init_var_run_t:fifo_file write;
+allow local_login_t initrc_t:dbus send_msg;
+allow initrc_t local_login_t:dbus send_msg;
