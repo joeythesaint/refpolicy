@@ -48,3 +48,5 @@
 /usr/lib/busybox/sbin /sbin
 /usr/lib/busybox/usr /usr
 
+# Web
+/www /var/www
