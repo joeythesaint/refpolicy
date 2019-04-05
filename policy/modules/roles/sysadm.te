@@ -42,6 +42,7 @@ ubac_fd_exempt(sysadm_t)
 
 init_exec(sysadm_t)
 init_admin(sysadm_t)
+init_script_role_transition(sysadm_r)
 
 selinux_read_policy(sysadm_t)
 
